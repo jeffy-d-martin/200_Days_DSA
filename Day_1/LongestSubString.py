@@ -20,13 +20,13 @@ hash = [0] * 256
 while right < len(s) :
     value = ord(s[right])
     if hash[value] == 1 :
-        while hash[ord(s[left])] != hash[ord(s[right])] and left <= right :
-            hash[left] = 0
+        while hash[value] == 1 :
+            hash[ord(s[left])] = 0
             left += 1
-        left += 1
     hash[value] = 1
-    right += 1
-    max = right - left 
+    
+    max = right - left + 1
     if max < sum :
         max = sum
+    right += 1
 print(f"The Optimal Soultion :  {max}")
